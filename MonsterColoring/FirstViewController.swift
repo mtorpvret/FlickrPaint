@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  MonsterDraw
 //
 //  Created by Markus Torpvret on 2016-02-19.
@@ -8,11 +8,14 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FirstViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet var drawView: DrawView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        drawView.rgbaImage = RGBAImage(size: CGSize(width: 300, height: 300))
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,9 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return drawView
+    }
 
 }
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2801A3541C77A5A800C5B3CA"
-               BuildableName = "MonsterDraw.app"
-               BlueprintName = "MonsterDraw"
-               ReferencedContainer = "container:MonsterDraw.xcodeproj">
+               BuildableName = "MonsterColoring.app"
+               BlueprintName = "MonsterColoring"
+               ReferencedContainer = "container:MonsterColoring.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2801A3541C77A5A800C5B3CA"
-            BuildableName = "MonsterDraw.app"
-            BlueprintName = "MonsterDraw"
-            ReferencedContainer = "container:MonsterDraw.xcodeproj">
+            BuildableName = "MonsterColoring.app"
+            BlueprintName = "MonsterColoring"
+            ReferencedContainer = "container:MonsterColoring.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2801A3541C77A5A800C5B3CA"
-            BuildableName = "MonsterDraw.app"
-            BlueprintName = "MonsterDraw"
-            ReferencedContainer = "container:MonsterDraw.xcodeproj">
+            BuildableName = "MonsterColoring.app"
+            BlueprintName = "MonsterColoring"
+            ReferencedContainer = "container:MonsterColoring.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2801A3541C77A5A800C5B3CA"
-            BuildableName = "MonsterDraw.app"
-            BlueprintName = "MonsterDraw"
-            ReferencedContainer = "container:MonsterDraw.xcodeproj">
+            BuildableName = "MonsterColoring.app"
+            BlueprintName = "MonsterColoring"
+            ReferencedContainer = "container:MonsterColoring.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

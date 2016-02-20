@@ -1,14 +1,16 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  MonsterDraw
 //
 //  Created by Markus Torpvret on 2016-02-19.
 //  Copyright © 2016 Markus Torpvret. All rights reserved.
 //
+// Supposed to show images from flickr to color
+// https://api.flickr.com/services/feeds/photos_public.gne/?tags=coloring&format=json&nojsoncallback=1
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

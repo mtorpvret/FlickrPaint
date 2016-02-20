@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MonsterDraw.xcodeproj">
+      location = "self:/Users/markus/Projekt/ios/MonsterDraw/MonsterColoring.xcodeproj">
    </FileRef>
 </Workspace>
