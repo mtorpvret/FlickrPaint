@@ -15,12 +15,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        drawView.rgbaImage = RGBAImage(size: CGSize(width: 300, height: 300))
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        drawView.rgbaImage = RGBAImage(image: UIImage(named: "coloringtest.jpg")!)
     }
 
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {

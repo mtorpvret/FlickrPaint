@@ -2,7 +2,7 @@ import UIKit
 
 public struct Pixel {
     public var value: UInt32
-    
+        
     public var red: UInt8 {
         get {
             return UInt8(value & 0xFF)
@@ -38,6 +38,10 @@ public struct Pixel {
             value = (UInt32(newValue) << 24) | (value & 0x00FFFFFF)
         }
     }
+}
+
+func ==(lhs: Pixel, rhs: Pixel) -> Bool {
+    return lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue && lhs.alpha == rhs.alpha
 }
 
 public struct RGBAImage {

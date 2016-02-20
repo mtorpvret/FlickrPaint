@@ -15,6 +15,7 @@
 		2801A3651C77A5A800C5B3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2801A3631C77A5A800C5B3CA /* LaunchScreen.storyboard */; };
 		2801A3731C77EFB200C5B3CA /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3721C77EFB200C5B3CA /* DrawView.swift */; };
 		2801A3751C78D05000C5B3CA /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3741C78D05000C5B3CA /* RGBAImage.swift */; };
+		28D08F531C78EDBC009C3861 /* coloringtest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28D08F521C78EDBC009C3861 /* coloringtest.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2801A3661C77A5A800C5B3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2801A3721C77EFB200C5B3CA /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		2801A3741C78D05000C5B3CA /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
+		28D08F521C78EDBC009C3861 /* coloringtest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coloringtest.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +69,10 @@
 				2801A35C1C77A5A800C5B3CA /* SecondViewController.swift */,
 				2801A35E1C77A5A800C5B3CA /* Main.storyboard */,
 				2801A3611C77A5A800C5B3CA /* Assets.xcassets */,
+				28D08F521C78EDBC009C3861 /* coloringtest.jpg */,
 				2801A3631C77A5A800C5B3CA /* LaunchScreen.storyboard */,
 				2801A3661C77A5A800C5B3CA /* Info.plist */,
 			);
-			name = MonsterColoring;
 			path = MonsterColoring;
 			sourceTree = "<group>";
 		};
@@ -132,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D08F531C78EDBC009C3861 /* coloringtest.jpg in Resources */,
 				2801A3651C77A5A800C5B3CA /* LaunchScreen.storyboard in Resources */,
 				2801A3621C77A5A800C5B3CA /* Assets.xcassets in Resources */,
 				2801A3601C77A5A800C5B3CA /* Main.storyboard in Resources */,
@@ -299,6 +302,7 @@
 				2801A36B1C77A5A800C5B3CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
