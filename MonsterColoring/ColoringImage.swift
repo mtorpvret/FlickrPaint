@@ -1,3 +1,10 @@
+//
+//  ColoringImage
+//  MonsterDraw
+//
+//  Extended from RGBAImage from the iOS course
+//
+
 import UIKit
 
 public struct Pixel {
@@ -40,11 +47,13 @@ public struct Pixel {
     }
 }
 
+
 func ==(lhs: Pixel, rhs: Pixel) -> Bool {
     return lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue && lhs.alpha == rhs.alpha
 }
 
-public struct RGBAImage {
+// This is RGBAImage renamed to ColoringImage since it's been extended below
+public struct ColoringImage {
     public var pixels: UnsafeMutableBufferPointer<Pixel>
     
     public var width: Int
@@ -71,22 +80,6 @@ public struct RGBAImage {
         pixels = UnsafeMutableBufferPointer<Pixel>(start: imageData, count: width * height)
     }
     
-    public init?(size: CGSize) {
-        width = Int(size.width)
-        height = Int(size.height)
-        
-        let imageData = UnsafeMutablePointer<Pixel>.alloc(width * height)
-        pixels = UnsafeMutableBufferPointer<Pixel>(start: imageData, count: width * height)
-        for i in 0..<pixels.count {
-            var pixel = pixels[i]
-            pixel.red = 255
-            pixel.green = 255
-            pixel.blue = 255
-            pixel.alpha = 255
-            pixels[i] = pixel
-        }        
-    }
-    
     public func toUIImage() -> UIImage? {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         var bitmapInfo: UInt32 = CGBitmapInfo.ByteOrder32Big.rawValue
@@ -101,4 +94,65 @@ public struct RGBAImage {
         
         return image
     }
+}
+
+// My extensions
+extension ColoringImage {
+    public init(size: CGSize) {
+        width = Int(size.width)
+        height = Int(size.height)
+        
+        let imageData = UnsafeMutablePointer<Pixel>.alloc(width * height)
+        pixels = UnsafeMutableBufferPointer<Pixel>(start: imageData, count: width * height)
+        for i in 0..<pixels.count {
+            var pixel = pixels[i]
+            pixel.red = 255
+            pixel.green = 255
+            pixel.blue = 255
+            pixel.alpha = 255
+            pixels[i] = pixel
+        }
+    }
+    
+    func makeBWImage() {
+        for i in 0..<pixels.count {
+            var pixel = pixels[i]
+            let pValue: UInt8 = shouldBeWhite(pixel) ? 255 : 0
+            pixel.red = pValue
+            pixel.green = pValue
+            pixel.blue = pValue
+            pixel.alpha = 255
+            pixels[i] = pixel
+        }
+    }
+    
+    func shouldBeWhite(pixel: Pixel) -> Bool {
+        // first make grayscale
+        let gsPixel = 0.21 * Double(pixel.red) + 0.72 * Double(pixel.green) + 0.07 * Double(pixel.blue)
+        return gsPixel > 200 ? true : false
+        // TODO: Could use more sophisticated threshold depending on how dark image is
+    }
+    
+    func fillWithColor(colorPixel: Pixel, atPoint origin: CGPoint) {
+        let x = Int(origin.x)
+        let y = Int(origin.y)
+        let originalColor = pixels[indexFor(x: x, y: y)]
+        fill(x: x, y: y, fromColor: originalColor, toColor: colorPixel)
+    }
+ 
+    func fill(x x: Int, y: Int, fromColor: Pixel, toColor: Pixel) {
+        if fromColor == toColor { return } // already the right color
+        if pixels[indexFor(x: x, y: y)] == fromColor {
+            pixels[indexFor(x: x, y: y)] = toColor
+            if x > 0 { fill(x: x-1, y: y, fromColor: fromColor, toColor: toColor) }
+            if y > 0 {fill(x: x, y: y-1, fromColor: fromColor, toColor: toColor) }
+            if x < width-1 { fill(x: x+1, y: y, fromColor: fromColor, toColor: toColor) }
+            if y < height-1 { fill(x: x, y: y+1, fromColor: fromColor, toColor: toColor) }
+        }
+    }
+    
+    func indexFor(x x: Int, y: Int) -> Int {
+        return x + width * y
+    }
+    
 }

@@ -9,64 +9,46 @@
 import UIKit
 
 class DrawView: UIImageView {
-    private var _rgbaImage: RGBAImage?
+    private var _cImage = ColoringImage(size: CGSize(width: 100,height: 100))
     
-    var rgbaImage: RGBAImage? {
+    var drawImage: UIImage? {
         get {
-            if _rgbaImage == nil {
-                guard let existingImage = image else { return nil }
-                _rgbaImage = RGBAImage(image: existingImage)
-            }
-            
-            return _rgbaImage
+            return image
         }
-        set(rgbaImage) {
-            if let _rgbaImage = rgbaImage {
-                makeBWImage(_rgbaImage)
-                image = _rgbaImage.toUIImage()
+        set(drawImage) {
+            if let existingDrawImage = drawImage {
+                if let newImage = ColoringImage(image: existingDrawImage) {
+                    _cImage = newImage
+                    _cImage.makeBWImage()
+                    updateImage()
+                }
             }
         }
     }
-   
-    func makeBWImage(var rgbaImage: RGBAImage) {
-        let pixels = rgbaImage.pixels
-        for i in 0..<pixels.count {
-            var pixel = pixels[i]
-            let pValue: UInt8 = shouldBeWhite(pixel) ? 255 : 0
-            pixel.red = pValue
-            pixel.green = pValue
-            pixel.blue = pValue
-            pixel.alpha = 255
-            pixels[i] = pixel
-        }
-        rgbaImage.pixels = pixels
-    }
     
-    func shouldBeWhite(pixel: Pixel) -> Bool {
-        // first make grayscale
-        let gsPixel = 0.21 * Double(pixel.red) + 0.72 * Double(pixel.green) + 0.07 * Double(pixel.blue)
-        return gsPixel > 200 ? true : false
+    func updateImage() {
+        image = _cImage.toUIImage()
     }
-    
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("View bounds: \(self.bounds)")
+        print("Imgage size: \(_cImage.width)x\(_cImage.height)")
         super.touchesBegan(touches, withEvent: event)
         if touches.count > 1 { return }
         if let touch = touches.first {
             let pos = touch.locationInView(self)
+            print("Point: \(pos)")
+            if outOfBounds(pos, width: _cImage.width, height: _cImage.height) { return }
             let colorPixel = Pixel(value: 0xCCCCCC)
-            fillWithColor(colorPixel, atPoint: pos)
+            _cImage.fillWithColor(colorPixel, atPoint: pos)
+            updateImage()
         }
         
     }
-    
-    func fillWithColor(colorPixel: Pixel, atPoint origin: CGPoint) {
-   //     let originalColor = pixelAtPoint(origin)
-        
+
+    func outOfBounds(point: CGPoint, width: Int, height: Int) -> Bool {
+        return point.x > CGFloat(width) || point.y > CGFloat(height)
     }
-    
-//    func pixelAtPoint(point: CGPoint) -> Pixel {
-       //return (rgbaImage?.pixels[rgbaImage!.width * Int(point.y) + Int(point.x)])!
- //   }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
