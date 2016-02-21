@@ -1,6 +1,6 @@
 //
 //  DrawView.swift
-//  MonsterDraw
+//  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-20.
 //  Copyright © 2016 Markus Torpvret. All rights reserved.
@@ -30,10 +30,22 @@ class DrawView: UIImageView {
         image = _cImage.toUIImage()
     }
 
+    func outOfBounds(point: CGPoint, width: Int, height: Int) -> Bool {
+        return point.x > CGFloat(width) || point.y > CGFloat(height)
+    }
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesMoved(touches, withEvent: event)
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
         print("View bounds: \(self.bounds)")
         print("Imgage size: \(_cImage.width)x\(_cImage.height)")
-        super.touchesBegan(touches, withEvent: event)
         if touches.count > 1 { return }
         if let touch = touches.first {
             let pos = touch.locationInView(self)
@@ -43,19 +55,6 @@ class DrawView: UIImageView {
             _cImage.fillWithColor(colorPixel, atPoint: pos)
             updateImage()
         }
-        
-    }
-
-    func outOfBounds(point: CGPoint, width: Int, height: Int) -> Bool {
-        return point.x > CGFloat(width) || point.y > CGFloat(height)
-    }
-    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
-    }
-    
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {

@@ -1,6 +1,6 @@
 //
-//  FirstViewController.swift
-//  MonsterDraw
+//  DrawViewController.swift
+//  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-19.
 //  Copyright © 2016 Markus Torpvret. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UIScrollViewDelegate {
+class DrawViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var drawView: DrawView!
     override func viewDidLoad() {
@@ -20,6 +20,10 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
 
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return drawView
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
 }

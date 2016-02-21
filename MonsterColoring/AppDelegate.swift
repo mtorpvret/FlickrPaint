@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MonsterDraw
+//  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-19.
 //  Copyright © 2016 Markus Torpvret. All rights reserved.

@@ -1,8 +1,8 @@
 //
 //  ColoringImage
-//  MonsterDraw
+//  MonsterColoring
 //
-//  Extended from RGBAImage from the iOS course
+//  Extended from RGBAImage from the University of Toronto iOS course
 //
 
 import UIKit
