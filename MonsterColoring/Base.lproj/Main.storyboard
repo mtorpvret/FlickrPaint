@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--My Image-->
@@ -22,18 +23,16 @@
                                 <subviews>
                                     <imageView contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-jn-pPq" userLabel="ImageView" customClass="DrawView" customModule="MonsterColoring" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="600" id="bEB-UX-bMU"/>
-                                            <constraint firstAttribute="height" constant="600" id="gXK-yR-ZmO"/>
-                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="h9m-jn-pPq" firstAttribute="leading" secondItem="h48-Mx-wqo" secondAttribute="leading" id="MVb-8L-H6c"/>
+                                    <constraint firstItem="h9m-jn-pPq" firstAttribute="centerY" secondItem="h48-Mx-wqo" secondAttribute="centerY" id="Ogg-4a-B3g"/>
                                     <constraint firstItem="h9m-jn-pPq" firstAttribute="top" secondItem="h48-Mx-wqo" secondAttribute="top" id="YfS-KV-wDk"/>
                                     <constraint firstAttribute="trailing" secondItem="h9m-jn-pPq" secondAttribute="trailing" id="i65-Je-sgb"/>
                                     <constraint firstAttribute="bottom" secondItem="h9m-jn-pPq" secondAttribute="bottom" id="k6v-G2-UcB"/>
+                                    <constraint firstItem="h9m-jn-pPq" firstAttribute="centerX" secondItem="h48-Mx-wqo" secondAttribute="centerX" id="mWL-Kp-YPe"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="3UT-Su-s3b"/>
@@ -68,9 +67,48 @@
                     <view key="view" contentMode="scaleToFill" id="6f8-ol-lNk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpd-op-Qwu" userLabel="Frame">
+                                <rect key="frame" x="70" y="70" width="460" height="381"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYw-S3-Bta" customClass="HSBColorPicker" customModule="MonsterColoring" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="440" height="361"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="uYw-S3-Bta" firstAttribute="leading" secondItem="Dpd-op-Qwu" secondAttribute="leading" constant="10" id="Hgx-nG-iY8"/>
+                                    <constraint firstAttribute="trailing" secondItem="uYw-S3-Bta" secondAttribute="trailing" constant="10" id="Pd6-vR-edb"/>
+                                    <constraint firstAttribute="bottom" secondItem="uYw-S3-Bta" secondAttribute="bottom" constant="10" id="pzq-QT-JRj"/>
+                                    <constraint firstItem="uYw-S3-Bta" firstAttribute="top" secondItem="Dpd-op-Qwu" secondAttribute="top" constant="10" id="xH2-Wc-VbL"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select color to paint with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-Xv-m13">
+                                <rect key="frame" x="70" y="510" width="460" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dpd-op-Qwu" firstAttribute="leading" secondItem="6f8-ol-lNk" secondAttribute="leadingMargin" constant="50" id="84e-Qs-RlP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dpd-op-Qwu" secondAttribute="trailing" constant="50" id="IKO-x4-ucY"/>
+                            <constraint firstItem="UWg-Xv-m13" firstAttribute="leading" secondItem="6f8-ol-lNk" secondAttribute="leadingMargin" constant="50" id="IXG-a9-LME"/>
+                            <constraint firstItem="UWg-Xv-m13" firstAttribute="top" secondItem="Dpd-op-Qwu" secondAttribute="bottom" constant="59" id="XC6-SO-GTy"/>
+                            <constraint firstItem="Dpd-op-Qwu" firstAttribute="top" secondItem="5tx-mc-3jg" secondAttribute="bottom" constant="50" id="eZa-KH-ifm"/>
+                            <constraint firstItem="ral-K1-Q6w" firstAttribute="top" secondItem="UWg-Xv-m13" secondAttribute="bottom" constant="20" id="pvL-Rs-il7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UWg-Xv-m13" secondAttribute="trailing" constant="50" id="wxw-Sq-2Jq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Choose Color" id="tsJ-jP-jfm"/>
+                    <connections>
+                        <outlet property="colorPicker" destination="uYw-S3-Bta" id="R6t-e4-zGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FN-YT-HjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Drawing Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="DrawingTabBarController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

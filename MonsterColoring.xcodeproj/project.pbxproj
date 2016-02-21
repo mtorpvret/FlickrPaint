@@ -17,6 +17,9 @@
 		2801A3751C78D05000C5B3CA /* ColoringImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3741C78D05000C5B3CA /* ColoringImage.swift */; };
 		28D08F531C78EDBC009C3861 /* coloringtest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28D08F521C78EDBC009C3861 /* coloringtest.jpg */; };
 		28D08F571C79AB60009C3861 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F561C79AB5F009C3861 /* ColorViewController.swift */; };
+		28D08F591C79D0BE009C3861 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */; };
+		28D08F5B1C7A0E23009C3861 /* DrawingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F5A1C7A0E23009C3861 /* DrawingContext.swift */; };
+		28D08F5D1C7A0E94009C3861 /* DrawingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F5C1C7A0E94009C3861 /* DrawingTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		2801A3741C78D05000C5B3CA /* ColoringImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoringImage.swift; sourceTree = "<group>"; };
 		28D08F521C78EDBC009C3861 /* coloringtest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coloringtest.jpg; sourceTree = "<group>"; };
 		28D08F561C79AB5F009C3861 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
+		28D08F5A1C7A0E23009C3861 /* DrawingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingContext.swift; sourceTree = "<group>"; };
+		28D08F5C1C7A0E94009C3861 /* DrawingTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +72,12 @@
 			children = (
 				2801A3581C77A5A800C5B3CA /* AppDelegate.swift */,
 				2801A35A1C77A5A800C5B3CA /* DrawViewController.swift */,
+				28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */,
 				28D08F561C79AB5F009C3861 /* ColorViewController.swift */,
 				2801A35C1C77A5A800C5B3CA /* ImageViewController.swift */,
 				2801A3721C77EFB200C5B3CA /* DrawView.swift */,
+				28D08F5C1C7A0E94009C3861 /* DrawingTabBarController.swift */,
+				28D08F5A1C7A0E23009C3861 /* DrawingContext.swift */,
 				2801A3741C78D05000C5B3CA /* ColoringImage.swift */,
 				2801A35E1C77A5A800C5B3CA /* Main.storyboard */,
 				2801A3611C77A5A800C5B3CA /* Assets.xcassets */,
@@ -151,10 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D08F5B1C7A0E23009C3861 /* DrawingContext.swift in Sources */,
 				2801A3751C78D05000C5B3CA /* ColoringImage.swift in Sources */,
 				2801A35D1C77A5A800C5B3CA /* ImageViewController.swift in Sources */,
+				28D08F5D1C7A0E94009C3861 /* DrawingTabBarController.swift in Sources */,
 				2801A3731C77EFB200C5B3CA /* DrawView.swift in Sources */,
 				2801A3591C77A5A800C5B3CA /* AppDelegate.swift in Sources */,
+				28D08F591C79D0BE009C3861 /* HSBColorPicker.swift in Sources */,
 				28D08F571C79AB60009C3861 /* ColorViewController.swift in Sources */,
 				2801A35B1C77A5A800C5B3CA /* DrawViewController.swift in Sources */,
 			);

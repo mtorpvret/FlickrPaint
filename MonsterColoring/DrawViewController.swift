@@ -18,6 +18,13 @@ class DrawViewController: UIViewController, UIScrollViewDelegate {
         drawView.drawImage = UIImage(named: "coloringtest.jpg")
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let tbc = tabBarController as! DrawingTabBarController
+        drawView.context = tbc.context
+    }
+    
+    
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return drawView
     }
@@ -25,6 +32,6 @@ class DrawViewController: UIViewController, UIScrollViewDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
+    
 }
 

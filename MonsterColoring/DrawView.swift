@@ -10,6 +10,7 @@ import UIKit
 
 class DrawView: UIImageView {
     private var _cImage = ColoringImage(size: CGSize(width: 100,height: 100))
+    var context: DrawingContext?
     
     var drawImage: UIImage? {
         get {
@@ -51,7 +52,8 @@ class DrawView: UIImageView {
             let pos = touch.locationInView(self)
             print("Point: \(pos)")
             if outOfBounds(pos, width: _cImage.width, height: _cImage.height) { return }
-            let colorPixel = Pixel(value: 0xCCCCCC)
+            
+            let colorPixel = context!.color
             _cImage.fillWithColor(colorPixel, atPoint: pos)
             updateImage()
         }
