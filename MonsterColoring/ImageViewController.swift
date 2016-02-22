@@ -5,8 +5,9 @@
 //  Created by Markus Torpvret on 2016-02-19.
 //  Copyright © 2016 Markus Torpvret. All rights reserved.
 //
-// Supposed to show images from flickr to color
-// https://api.flickr.com/services/feeds/photos_public.gne/?tags=coloring&format=json&nojsoncallback=1
+// Displays black and white photos from the flickr stream with the coloringbook tag set,
+// which should make them suitable to color.
+//
 
 import UIKit
 
@@ -29,7 +30,7 @@ class ImageViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func updateFeed() {
-        if let url = NSURL(string: "https://api.flickr.com/services/feeds/photos_public.gne/?tags=coloring&format=json&nojsoncallback=1") {
+        if let url = NSURL(string: "https://api.flickr.com/services/feeds/photos_public.gne/?tags=coloringbook,blackandwhite&format=json&nojsoncallback=1") {
             print(url)
             let request = NSURLRequest(URL: url)
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in

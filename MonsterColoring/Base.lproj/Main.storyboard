@@ -21,7 +21,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="h48-Mx-wqo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-jn-pPq" userLabel="ImageView" customClass="DrawView" customModule="MonsterColoring" customModuleProvider="target">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-jn-pPq" userLabel="ImageView" customClass="DrawView" customModule="MonsterColoring" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                 </subviews>
@@ -137,16 +137,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-tl-YMV">
-                                                    <rect key="frame" x="321" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQQ-hS-4YM">
-                                                    <rect key="frame" x="16" y="-42" width="240" height="128"/>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u3D-DQ-a1x">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="53"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQQ-hS-4YM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="53"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="150" id="f7t-bW-NGY"/>
+                                                                <constraint firstAttribute="height" constant="200" id="s8w-uz-Uzt"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-tl-YMV">
+                                                            <rect key="frame" x="150" y="16" width="410" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u3D-DQ-a1x" firstAttribute="top" secondItem="huH-ht-sjg" secondAttribute="top" id="IxU-bL-ywS"/>
+                                                <constraint firstAttribute="bottom" secondItem="u3D-DQ-a1x" secondAttribute="bottom" id="Thn-4g-t7L"/>
+                                                <constraint firstItem="u3D-DQ-a1x" firstAttribute="leading" secondItem="huH-ht-sjg" secondAttribute="leading" id="gGA-qO-D9c"/>
+                                                <constraint firstAttribute="trailing" secondItem="u3D-DQ-a1x" secondAttribute="trailing" id="mUq-Sx-3uU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="ColoringTableCell"/>
                                         <connections>
