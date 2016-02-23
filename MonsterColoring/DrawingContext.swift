@@ -6,8 +6,9 @@
 //  Copyright © 2016 Markus Torpvret. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DrawingContext: NSObject {
-    var color:Pixel = Pixel(value: 0)
+    var color = Pixel(value: 0)
+    var newImage: UIImage?
 }

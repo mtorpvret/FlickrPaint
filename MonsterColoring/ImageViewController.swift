@@ -13,6 +13,16 @@ import UIKit
 
 class ImageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var urlSession: NSURLSession!
+    var context: DrawingContext?
+    
+    @IBAction func imageSelected(sender: UIButton) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ColoringTableCell
+            print (currentCell)
+            context!.newImage = currentCell.previewImage.image
+            print("selected new image \(context!.newImage)")
+        }
+    }
     
     @IBOutlet var tableView: UITableView!
     
@@ -24,6 +34,8 @@ class ImageViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     override func viewDidLoad() {
+        let tbc = tabBarController as! DrawingTabBarController
+        context = tbc.context
         tableView.delegate = self
         tableView.dataSource = self
         updateFeed()
@@ -44,6 +56,7 @@ class ImageViewController: UIViewController, UITableViewDataSource, UITableViewD
             task.resume()
         }
     }
+    
    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

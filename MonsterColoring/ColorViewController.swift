@@ -15,9 +15,11 @@ class ColorViewController: UIViewController, HSBColorPickerDelegate {
     var pixelColor = Pixel(value: 0)
     var context: DrawingContext?
     
+    @IBOutlet var selectedColor: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        selectedColor.backgroundColor = UIColor.blackColor()
         colorPicker.delegate = self
         let tbc = tabBarController as! DrawingTabBarController
         context = tbc.context
@@ -38,6 +40,7 @@ class ColorViewController: UIViewController, HSBColorPickerDelegate {
             let alpha = UInt32(a*255)
             pixelColor = Pixel(value: alpha << 24 + blue << 16 + green << 8 + red)
             context!.color = pixelColor
+            selectedColor.backgroundColor = color
         }
     }
 }

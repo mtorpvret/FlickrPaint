@@ -74,6 +74,7 @@
 		2801A3571C77A5A800C5B3CA /* MonsterColoring */ = {
 			isa = PBXGroup;
 			children = (
+				28D08F681C7BAD55009C3861 /* Icons */,
 				2801A3581C77A5A800C5B3CA /* AppDelegate.swift */,
 				2801A35A1C77A5A800C5B3CA /* DrawViewController.swift */,
 				28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */,
@@ -92,6 +93,13 @@
 				2801A3661C77A5A800C5B3CA /* Info.plist */,
 			);
 			path = MonsterColoring;
+			sourceTree = "<group>";
+		};
+		28D08F681C7BAD55009C3861 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

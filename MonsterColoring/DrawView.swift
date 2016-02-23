@@ -29,6 +29,7 @@ class DrawView: UIImageView {
     
     func updateImage() {
         image = _cImage.toUIImage()
+        
     }
 
     func outOfBounds(point: CGPoint, width: Int, height: Int) -> Bool {

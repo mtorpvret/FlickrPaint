@@ -22,6 +22,11 @@ class DrawViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         let tbc = tabBarController as! DrawingTabBarController
         drawView.context = tbc.context
+        if let newImage = tbc.context.newImage {
+            print ("setting new image")
+            drawView.drawImage = newImage
+            tbc.context.newImage = nil
+        }
     }
     
     
