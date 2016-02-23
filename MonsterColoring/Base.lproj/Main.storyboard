@@ -46,7 +46,7 @@
                             <constraint firstAttribute="bottom" secondItem="h48-Mx-wqo" secondAttribute="bottom" id="uvM-j5-hc4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Coloring Image" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Coloring Image" image="image" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="drawView" destination="h9m-jn-pPq" id="e6R-mk-MrA"/>
                     </connections>
@@ -126,7 +126,7 @@
                             <constraint firstItem="Dpd-op-Qwu" firstAttribute="leading" secondItem="6f8-ol-lNk" secondAttribute="leading" constant="50" id="chg-Ff-C3Q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Choose Color" id="tsJ-jP-jfm"/>
+                    <tabBarItem key="tabBarItem" title="Choose Color" image="palette" id="tsJ-jP-jfm"/>
                     <connections>
                         <outlet property="colorPicker" destination="uYw-S3-Bta" id="R6t-e4-zGh"/>
                         <outlet property="selectedColor" destination="5ft-Fc-5Ir" id="1f9-mg-1kB"/>
@@ -213,7 +213,7 @@
                             <constraint firstItem="HFw-eQ-Kq2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="voO-0p-rlc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Browse Images" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Browse Images" image="book" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableView" destination="SJj-mM-d2V" id="kRx-YM-xad"/>
                     </connections>
@@ -243,4 +243,9 @@
             <point key="canvasLocation" x="-88" y="-156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="25" height="15"/>
+        <image name="image" width="25" height="24"/>
+        <image name="palette" width="25" height="24"/>
+    </resources>
 </document>
