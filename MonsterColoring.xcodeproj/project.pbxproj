@@ -15,6 +15,7 @@
 		2801A3651C77A5A800C5B3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2801A3631C77A5A800C5B3CA /* LaunchScreen.storyboard */; };
 		2801A3731C77EFB200C5B3CA /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3721C77EFB200C5B3CA /* PaintView.swift */; };
 		2801A3751C78D05000C5B3CA /* ColoringImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3741C78D05000C5B3CA /* ColoringImage.swift */; };
+		2810CF631C8B266F00B759AD /* coloringtest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2810CF621C8B266F00B759AD /* coloringtest.jpg */; };
 		28D08F571C79AB60009C3861 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F561C79AB5F009C3861 /* ColorViewController.swift */; };
 		28D08F591C79D0BE009C3861 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */; };
 		28D08F5B1C7A0E23009C3861 /* PaintingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F5A1C7A0E23009C3861 /* PaintingContext.swift */; };
@@ -31,7 +32,6 @@
 		28D08F8B1C7D0DF1009C3861 /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08F881C7D0DF1009C3861 /* book@2x.png */; };
 		28D08F8C1C7D0DF1009C3861 /* book@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08F891C7D0DF1009C3861 /* book@3x.png */; };
 		28D08F8E1C7D100A009C3861 /* owlWithGlasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D08F8D1C7D100A009C3861 /* owlWithGlasses.png */; };
-		28D08F901C7D1150009C3861 /* coloringtest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28D08F8F1C7D1150009C3861 /* coloringtest.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +45,7 @@
 		2801A3661C77A5A800C5B3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2801A3721C77EFB200C5B3CA /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		2801A3741C78D05000C5B3CA /* ColoringImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoringImage.swift; sourceTree = "<group>"; };
+		2810CF621C8B266F00B759AD /* coloringtest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coloringtest.jpg; sourceTree = "<group>"; };
 		28D08F561C79AB5F009C3861 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		28D08F5A1C7A0E23009C3861 /* PaintingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingContext.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		28D08F881C7D0DF1009C3861 /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@2x.png"; sourceTree = "<group>"; };
 		28D08F891C7D0DF1009C3861 /* book@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@3x.png"; sourceTree = "<group>"; };
 		28D08F8D1C7D100A009C3861 /* owlWithGlasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = owlWithGlasses.png; sourceTree = "<group>"; };
-		28D08F8F1C7D1150009C3861 /* coloringtest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coloringtest.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,18 +97,18 @@
 				28D08F681C7BAD55009C3861 /* Icons */,
 				2801A3581C77A5A800C5B3CA /* AppDelegate.swift */,
 				2801A35A1C77A5A800C5B3CA /* PaintViewController.swift */,
-				28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */,
 				28D08F561C79AB5F009C3861 /* ColorViewController.swift */,
 				2801A35C1C77A5A800C5B3CA /* BrowseFeedViewController.swift */,
-				2801A3721C77EFB200C5B3CA /* PaintView.swift */,
 				28D08F5C1C7A0E94009C3861 /* PaintingTabBarController.swift */,
-				28D08F5A1C7A0E23009C3861 /* PaintingContext.swift */,
-				28D08F601C7A5F40009C3861 /* Feed.swift */,
-				28D08F8F1C7D1150009C3861 /* coloringtest.jpg */,
+				2801A3721C77EFB200C5B3CA /* PaintView.swift */,
+				28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */,
 				2801A3741C78D05000C5B3CA /* ColoringImage.swift */,
+				28D08F5A1C7A0E23009C3861 /* PaintingContext.swift */,
 				28D08F5E1C7A2FA7009C3861 /* ColoringTableCell.swift */,
+				28D08F601C7A5F40009C3861 /* Feed.swift */,
 				2801A35E1C77A5A800C5B3CA /* Main.storyboard */,
 				2801A3611C77A5A800C5B3CA /* Assets.xcassets */,
+				2810CF621C8B266F00B759AD /* coloringtest.jpg */,
 				28D08F8D1C7D100A009C3861 /* owlWithGlasses.png */,
 				2801A3631C77A5A800C5B3CA /* LaunchScreen.storyboard */,
 				2801A3661C77A5A800C5B3CA /* Info.plist */,
@@ -196,7 +196,7 @@
 				28D08F801C7D0348009C3861 /* palette@3x.png in Resources */,
 				2801A3651C77A5A800C5B3CA /* LaunchScreen.storyboard in Resources */,
 				28D08F841C7D0B69009C3861 /* image@1x.png in Resources */,
-				28D08F901C7D1150009C3861 /* coloringtest.jpg in Resources */,
+				2810CF631C8B266F00B759AD /* coloringtest.jpg in Resources */,
 				28D08F8C1C7D0DF1009C3861 /* book@3x.png in Resources */,
 				28D08F7F1C7D0348009C3861 /* palette@2x.png in Resources */,
 				2801A3621C77A5A800C5B3CA /* Assets.xcassets in Resources */,

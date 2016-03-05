@@ -20,7 +20,6 @@ class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITable
             let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ColoringTableCell
             print (currentCell)
             context!.newImage = currentCell.previewImage.image
-            print("selected new image \(context!.newImage)")
         }
     }
     

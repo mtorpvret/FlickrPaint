@@ -10,11 +10,12 @@ import UIKit
 
 class PaintViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var paintView: PaintView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        scrollView.delegate = self
         paintView.paintImage = UIImage(named: "coloringtest.jpg")
     }
 
@@ -23,7 +24,6 @@ class PaintViewController: UIViewController, UIScrollViewDelegate {
         let tbc = tabBarController as! PaintingTabBarController
         paintView.context = tbc.context
         if let newImage = tbc.context.newImage {
-            print ("setting new image")
             paintView.paintImage = newImage
             tbc.context.newImage = nil
         }

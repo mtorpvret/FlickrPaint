@@ -127,6 +127,7 @@ extension ColoringImage {
     
     func shouldBeWhite(pixel: Pixel) -> Bool {
         // first make grayscale
+        if pixel.alpha < 1 { return true }
         let gsPixel = 0.21 * Double(pixel.red) + 0.72 * Double(pixel.green) + 0.07 * Double(pixel.blue)
         return gsPixel > 200 ? true : false
         // TODO: Could use more sophisticated threshold depending on how dark image is

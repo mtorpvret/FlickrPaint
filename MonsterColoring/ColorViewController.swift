@@ -23,7 +23,6 @@ class ColorViewController: UIViewController, HSBColorPickerDelegate {
         colorPicker.delegate = self
         let tbc = tabBarController as! PaintingTabBarController
         context = tbc.context
-        print("In: Painting color: \(context!.color)")
 
     }
     
@@ -33,8 +32,7 @@ class ColorViewController: UIViewController, HSBColorPickerDelegate {
         var b = CGFloat()
         var a = CGFloat()
         if color.getRed(&r, green: &g, blue: &b, alpha: &a) {
-            print ("Color: \(r), \(g), \(b), (\(a))")
-            let red = UInt32(r*255)
+             let red = UInt32(r*255)
             let green = UInt32(g*255)
             let blue = UInt32(b*255)
             let alpha = UInt32(a*255)
