@@ -135,18 +135,26 @@ extension ColoringImage {
     func fillWithColor(colorPixel: Pixel, atPoint origin: CGPoint) {
         let x = Int(origin.x)
         let y = Int(origin.y)
+        let pointsToFill:[(Int, Int)] = [(x,y)]
         let originalColor = pixels[indexFor(x: x, y: y)]
-        fill(x: x, y: y, fromColor: originalColor, toColor: colorPixel)
+        if originalColor == colorPixel { return } // already the right color
+        fill(pointsToFill, fromColor: originalColor, toColor: colorPixel)
     }
- 
-    func fill(x x: Int, y: Int, fromColor: Pixel, toColor: Pixel) {
-        if fromColor == toColor { return } // already the right color
-        if pixels[indexFor(x: x, y: y)] == fromColor {
-            pixels[indexFor(x: x, y: y)] = toColor
-            if x > 0 { fill(x: x-1, y: y, fromColor: fromColor, toColor: toColor) }
-            if y > 0 {fill(x: x, y: y-1, fromColor: fromColor, toColor: toColor) }
-            if x < width-1 { fill(x: x+1, y: y, fromColor: fromColor, toColor: toColor) }
-            if y < height-1 { fill(x: x, y: y+1, fromColor: fromColor, toColor: toColor) }
+
+    // Had to make it imperative because couldn't get tail recursion optimization to work :-(
+    func fill(var pointsToFill: [(Int, Int)], fromColor: Pixel, toColor: Pixel) {
+        var i = 0
+        while pointsToFill.count > i {
+            let (x, y) = pointsToFill[i]
+            let p = indexFor(x: x, y: y)
+            if pixels[p] == fromColor {
+                pixels[p] = toColor
+                if x > 0 { pointsToFill.append((x-1, y)) }
+                if y > 0 { pointsToFill.append((x, y-1)) }
+                if x < width-1 { pointsToFill.append((x+1, y)) }
+                if y < height-1 { pointsToFill.append((x, y+1)) }
+            }
+            i += 1
         }
     }
     
