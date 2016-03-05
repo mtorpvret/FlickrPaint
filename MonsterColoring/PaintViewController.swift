@@ -16,7 +16,7 @@ class PaintViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         paintView.scrollView = scrollView
-        paintView.paintImage = UIImage(named: "coloringtest.jpg")
+        paintView.paintImage = UIImage(named: "owlWithGlasses.png")
     }
 
     override func viewWillAppear(animated: Bool) {

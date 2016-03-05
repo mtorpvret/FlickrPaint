@@ -36,9 +36,7 @@ class PaintView: UIImageView {
     }
 
     func outOfBounds(point: CGPoint, width: Int, height: Int) -> Bool {
-        let oob = point.x > CGFloat(width) || point.y > CGFloat(height)
-        print("Out of bounds for point \(point), width \(width), height \(height) = \(oob)")
-        return oob
+        return point.x > CGFloat(width) || point.y > CGFloat(height)
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -56,23 +54,18 @@ class PaintView: UIImageView {
         if !cancelled {
             let imgSize = image!.size
             let viewBounds = self.bounds
-            print("View bounds: \(viewBounds), imgSize: \(imgSize)")
             
             let xScale = viewBounds.width / imgSize.width
             let yScale = viewBounds.height / imgSize.height
             let imgScale = min(xScale, yScale)
-            print("xScale:\(xScale), yScale: \(yScale), scale: \(imgScale)")
             
             let xOffset = (viewBounds.width - imgSize.width * imgScale) / 2
             let yOffset = (viewBounds.height - imgSize.height * imgScale) / 2
-            print ("Offsets: x = \(xOffset), y = \(yOffset)")
             
             if touches.count > 1 { return }
             if let touch = touches.first {
                 let pos = touch.locationInView(self)
-                print("Pos: \(pos)")
                 let scaledPos = CGPoint(x: (pos.x - xOffset) / imgScale, y: (pos.y - yOffset) / imgScale)
-                print("Scaled pos: \(scaledPos)")
                 if outOfBounds(scaledPos, width: _cImage.width, height: _cImage.height) { return }
             
                 let colorPixel = context!.color

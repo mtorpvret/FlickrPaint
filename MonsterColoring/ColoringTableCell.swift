@@ -13,4 +13,6 @@ class ColoringTableCell: UITableViewCell {
     @IBOutlet var previewImage: UIImageView!
 
     weak var dataTask: NSURLSessionDataTask?
+    
+    var imageLink: NSURL?
 }

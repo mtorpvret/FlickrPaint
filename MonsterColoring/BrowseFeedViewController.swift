@@ -18,8 +18,7 @@ class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func imageSelected(sender: UIButton) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ColoringTableCell
-            print (currentCell)
-            context!.newImage = currentCell.previewImage.image
+            useImageFromFlickr(currentCell.imageLink!)
         }
     }
     
@@ -27,7 +26,6 @@ class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITable
     
     var feed: Feed? {
         didSet {
-            print(feed)
             self.tableView.reloadData()
         }
     }
@@ -42,7 +40,6 @@ class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITable
 
     func updateFeed() {
         if let url = NSURL(string: "https://api.flickr.com/services/feeds/photos_public.gne/?tags=coloringbook,blackandwhite&format=json&nojsoncallback=1") {
-            print(url)
             let request = NSURLRequest(URL: url)
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
                 if error == nil && data != nil {
@@ -85,8 +82,9 @@ class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITable
         
         let item = self.feed!.items[indexPath.row]
         cell.title.text = item.title
+        cell.imageLink = item.imageURL
         
-        let request = NSURLRequest(URL: item.imageURL)
+        let request = NSURLRequest(URL: item.previewURL)
         
         cell.dataTask = self.urlSession.dataTaskWithRequest(request) { (data, response, error) -> Void in
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
@@ -110,6 +108,19 @@ class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    func useImageFromFlickr(url: NSURL) {
+        let request = NSURLRequest(URL: url)
+        let dataTask = self.urlSession.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                if error == nil && data != nil {
+                    self.context!.newImage = UIImage(data: data!)
+                }
+            })
+            
+        }
+        dataTask.resume()
     }
     
 }
