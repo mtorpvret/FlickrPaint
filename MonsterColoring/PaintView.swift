@@ -11,7 +11,9 @@ import UIKit
 class PaintView: UIImageView {
     private var _cImage = ColoringImage(size: CGSize(width: 100,height: 100))
     var context: PaintingContext?
+    var scrollView: UIScrollView?
     var cancelled = false
+    
     
     var paintImage: UIImage? {
         get {
@@ -52,16 +54,29 @@ class PaintView: UIImageView {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         if !cancelled {
-            print("View bounds: \(self.bounds)")
-            print("Imgage size: \(_cImage.width)x\(_cImage.height)")
+            let imgSize = image!.size
+            let viewBounds = self.bounds
+            print("View bounds: \(viewBounds), imgSize: \(imgSize)")
+            
+            let xScale = viewBounds.width / imgSize.width
+            let yScale = viewBounds.height / imgSize.height
+            let imgScale = min(xScale, yScale)
+            print("xScale:\(xScale), yScale: \(yScale), scale: \(imgScale)")
+            
+            let xOffset = (viewBounds.width - imgSize.width * imgScale) / 2
+            let yOffset = (viewBounds.height - imgSize.height * imgScale) / 2
+            print ("Offsets: x = \(xOffset), y = \(yOffset)")
+            
             if touches.count > 1 { return }
             if let touch = touches.first {
                 let pos = touch.locationInView(self)
-                print("Point: \(pos)")
-                if outOfBounds(pos, width: _cImage.width, height: _cImage.height) { return }
+                print("Pos: \(pos)")
+                let scaledPos = CGPoint(x: (pos.x - xOffset) / imgScale, y: (pos.y - yOffset) / imgScale)
+                print("Scaled pos: \(scaledPos)")
+                if outOfBounds(scaledPos, width: _cImage.width, height: _cImage.height) { return }
             
                 let colorPixel = context!.color
-                _cImage.fillWithColor(colorPixel, atPoint: pos)
+                _cImage.fillWithColor(colorPixel, atPoint: scaledPos)
                 updateImage()
             }
         }
