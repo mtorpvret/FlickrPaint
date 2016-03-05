@@ -1,5 +1,5 @@
 //
-//  DrawView.swift
+//  PaintView.swift
 //  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-20.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DrawView: UIImageView {
+class PaintView: UIImageView {
     private var _cImage = ColoringImage(size: CGSize(width: 100,height: 100))
-    var context: DrawingContext?
+    var context: PaintingContext?
     
-    var drawImage: UIImage? {
+    var paintImage: UIImage? {
         get {
             return image
         }
-        set(drawImage) {
-            if let existingDrawImage = drawImage {
-                if let newImage = ColoringImage(image: existingDrawImage) {
+        set(paintImage) {
+            if let existingPaintImage = paintImage {
+                if let newImage = ColoringImage(image: existingPaintImage) {
                     _cImage = newImage
                     _cImage.makeBWImage()
                     updateImage()

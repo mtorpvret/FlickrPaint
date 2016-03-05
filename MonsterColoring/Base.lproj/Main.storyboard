@@ -8,7 +8,7 @@
         <!--Coloring Image-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="DrawViewController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="PaintViewController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -20,7 +20,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="h48-Mx-wqo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-jn-pPq" userLabel="ImageView" customClass="DrawView" customModule="MonsterColoring" customModuleProvider="target">
+                                    <imageView contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9m-jn-pPq" userLabel="ImageView" customClass="PaintView" customModule="MonsterColoring" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                 </subviews>
@@ -48,7 +48,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Coloring Image" image="image" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="drawView" destination="h9m-jn-pPq" id="e6R-mk-MrA"/>
+                        <outlet property="paintView" destination="h9m-jn-pPq" id="hPY-XP-yVI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -139,7 +139,7 @@
         <!--ImageSelect-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" userLabel="ImageSelect" customClass="ImageViewController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="ImageSelect" customClass="BrowseFeedViewController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -196,7 +196,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kef-ky-66h"/>
                                 </constraints>
-                                <state key="normal" title="Select Image to Color"/>
+                                <state key="normal" title="Click Here To Use Selected Image"/>
                                 <connections>
                                     <action selector="imageSelected:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="RR3-dW-C0a"/>
                                 </connections>
@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Drawing Tab Bar Controller-->
+        <!--Painting Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="DrawingTabBarController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="PaintingTabBarController" customModule="MonsterColoring" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

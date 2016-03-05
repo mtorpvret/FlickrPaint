@@ -1,5 +1,5 @@
 //
-//  ImageViewController.swift
+//  BrowseFeedViewController.swift
 //  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-19.
@@ -11,9 +11,9 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BrowseFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var urlSession: NSURLSession!
-    var context: DrawingContext?
+    var context: PaintingContext?
     
     @IBAction func imageSelected(sender: UIButton) {
         if let indexPath = tableView.indexPathForSelectedRow {
@@ -34,7 +34,7 @@ class ImageViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     override func viewDidLoad() {
-        let tbc = tabBarController as! DrawingTabBarController
+        let tbc = tabBarController as! PaintingTabBarController
         context = tbc.context
         tableView.delegate = self
         tableView.dataSource = self

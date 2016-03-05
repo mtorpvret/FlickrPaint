@@ -1,5 +1,5 @@
 //
-//  DrawViewController.swift
+//  PaintViewController.swift
 //  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-19.
@@ -8,30 +8,30 @@
 
 import UIKit
 
-class DrawViewController: UIViewController, UIScrollViewDelegate {
+class PaintViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet var drawView: DrawView!
+    @IBOutlet var paintView: PaintView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        drawView.drawImage = UIImage(named: "coloringtest.jpg")
+        paintView.paintImage = UIImage(named: "coloringtest.jpg")
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let tbc = tabBarController as! DrawingTabBarController
-        drawView.context = tbc.context
+        let tbc = tabBarController as! PaintingTabBarController
+        paintView.context = tbc.context
         if let newImage = tbc.context.newImage {
             print ("setting new image")
-            drawView.drawImage = newImage
+            paintView.paintImage = newImage
             tbc.context.newImage = nil
         }
     }
     
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return drawView
+        return paintView
     }
     
     override func prefersStatusBarHidden() -> Bool {

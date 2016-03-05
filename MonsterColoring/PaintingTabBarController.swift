@@ -1,5 +1,5 @@
 //
-//  DrawingTabBarController.swift
+//  PaintingTabBarController.swift
 //  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-21.
@@ -7,6 +7,6 @@
 //
 
 import UIKit
-class DrawingTabBarController: UITabBarController {
-    let context = DrawingContext()
+class PaintingTabBarController: UITabBarController {
+    let context = PaintingContext()
 }

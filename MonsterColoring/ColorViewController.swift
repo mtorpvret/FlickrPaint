@@ -13,7 +13,7 @@ class ColorViewController: UIViewController, HSBColorPickerDelegate {
     @IBOutlet var colorPicker: HSBColorPicker!
     
     var pixelColor = Pixel(value: 0)
-    var context: DrawingContext?
+    var context: PaintingContext?
     
     @IBOutlet var selectedColor: UIView!
     
@@ -21,9 +21,9 @@ class ColorViewController: UIViewController, HSBColorPickerDelegate {
         super.viewDidLoad()
         selectedColor.backgroundColor = UIColor.blackColor()
         colorPicker.delegate = self
-        let tbc = tabBarController as! DrawingTabBarController
+        let tbc = tabBarController as! PaintingTabBarController
         context = tbc.context
-        print("In: Drawing color: \(context!.color)")
+        print("In: Painting color: \(context!.color)")
 
     }
     

@@ -1,5 +1,5 @@
 //
-//  DrawingContext.swift
+//  PaintingContext.swift
 //  MonsterColoring
 //
 //  Created by Markus Torpvret on 2016-02-21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrawingContext: NSObject {
+class PaintingContext: NSObject {
     var color = Pixel(value: 0)
     var newImage: UIImage?
 }
