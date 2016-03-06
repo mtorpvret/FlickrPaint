@@ -12,20 +12,25 @@ class PaintViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var paintView: PaintView!
+
+    var context: PaintingContext?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let tbc = tabBarController as! PaintingTabBarController
+        context = tbc.context
         paintView.scrollView = scrollView
-        paintView.paintImage = UIImage(named: "owlWithGlasses.png")
+        let startImage = UIImage(named: "owlWithGlasses.png")
+        paintView.paintImage = startImage
+        paintView.context = context
+        context!.currentImage = startImage
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let tbc = tabBarController as! PaintingTabBarController
-        paintView.context = tbc.context
-        if let newImage = tbc.context.newImage {
+        if let newImage = context!.newImage {
             paintView.paintImage = newImage
-            tbc.context.newImage = nil
+            context!.newImage = nil
         }
     }
     

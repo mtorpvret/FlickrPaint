@@ -15,6 +15,7 @@
 		2801A3651C77A5A800C5B3CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2801A3631C77A5A800C5B3CA /* LaunchScreen.storyboard */; };
 		2801A3731C77EFB200C5B3CA /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3721C77EFB200C5B3CA /* PaintView.swift */; };
 		2801A3751C78D05000C5B3CA /* ColoringImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801A3741C78D05000C5B3CA /* ColoringImage.swift */; };
+		285B9B601C8C08DD00E271AD /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B9B5F1C8C08DD00E271AD /* OptionsViewController.swift */; };
 		28D08F571C79AB60009C3861 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F561C79AB5F009C3861 /* ColorViewController.swift */; };
 		28D08F591C79D0BE009C3861 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */; };
 		28D08F5B1C7A0E23009C3861 /* PaintingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D08F5A1C7A0E23009C3861 /* PaintingContext.swift */; };
@@ -44,6 +45,7 @@
 		2801A3661C77A5A800C5B3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2801A3721C77EFB200C5B3CA /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		2801A3741C78D05000C5B3CA /* ColoringImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoringImage.swift; sourceTree = "<group>"; };
+		285B9B5F1C8C08DD00E271AD /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		28D08F561C79AB5F009C3861 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		28D08F5A1C7A0E23009C3861 /* PaintingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingContext.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				2801A35A1C77A5A800C5B3CA /* PaintViewController.swift */,
 				28D08F561C79AB5F009C3861 /* ColorViewController.swift */,
 				2801A35C1C77A5A800C5B3CA /* BrowseFeedViewController.swift */,
+				285B9B5F1C8C08DD00E271AD /* OptionsViewController.swift */,
 				28D08F5C1C7A0E94009C3861 /* PaintingTabBarController.swift */,
 				2801A3721C77EFB200C5B3CA /* PaintView.swift */,
 				28D08F581C79D0BE009C3861 /* HSBColorPicker.swift */,
@@ -110,7 +113,6 @@
 				2801A3631C77A5A800C5B3CA /* LaunchScreen.storyboard */,
 				2801A3661C77A5A800C5B3CA /* Info.plist */,
 			);
-			name = FlickrPaint;
 			path = FlickrPaint;
 			sourceTree = "<group>";
 		};
@@ -220,6 +222,7 @@
 				2801A3591C77A5A800C5B3CA /* AppDelegate.swift in Sources */,
 				28D08F591C79D0BE009C3861 /* HSBColorPicker.swift in Sources */,
 				28D08F571C79AB60009C3861 /* ColorViewController.swift in Sources */,
+				285B9B601C8C08DD00E271AD /* OptionsViewController.swift in Sources */,
 				2801A35B1C77A5A800C5B3CA /* PaintViewController.swift in Sources */,
 				28D08F5F1C7A2FA7009C3861 /* ColoringTableCell.swift in Sources */,
 			);

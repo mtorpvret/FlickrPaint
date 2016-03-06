@@ -10,8 +10,4 @@ import UIKit
 class PaintingTabBarController: UITabBarController {
     let context = PaintingContext()
    
-//    func showShareDialog(image: UIImage) {
-//        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-//        presentViewController(activityController, animated: true, completion: nil)
-//    }
 }

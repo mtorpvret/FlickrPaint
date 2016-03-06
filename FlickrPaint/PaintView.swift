@@ -32,6 +32,7 @@ class PaintView: UIImageView {
     
     func updateImage() {
         image = _cImage.toUIImage()
+        context?.currentImage = image
         
     }
 

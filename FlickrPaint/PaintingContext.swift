@@ -11,4 +11,5 @@ import UIKit
 class PaintingContext: NSObject {
     var color = Pixel(value: 0)
     var newImage: UIImage?
+    var currentImage: UIImage?
 }
