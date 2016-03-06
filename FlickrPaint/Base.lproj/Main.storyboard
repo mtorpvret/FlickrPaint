@@ -256,7 +256,7 @@
                             <constraint firstItem="I7q-Uk-GbQ" firstAttribute="top" secondItem="2ga-Bi-X5m" secondAttribute="bottom" id="fWZ-Xs-PmD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Options" id="KPb-dP-xGJ"/>
+                    <tabBarItem key="tabBarItem" title="Options" image="share.png" id="KPb-dP-xGJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icd-nv-t7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -288,5 +288,6 @@
         <image name="book" width="25" height="15"/>
         <image name="image" width="25" height="24"/>
         <image name="palette" width="25" height="24"/>
+        <image name="share.png" width="25" height="20"/>
     </resources>
 </document>
